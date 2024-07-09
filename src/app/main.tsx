@@ -1,10 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import './index.css';
+import { App } from './app';
+
+import '@radix-ui/themes/styles.css';
+import './styles/index.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <h1>Test</h1>
+    <App />
   </React.StrictMode>
 );

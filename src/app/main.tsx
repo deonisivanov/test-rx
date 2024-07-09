@@ -1,3 +1,6 @@
+// eslint-disable-next-line simple-import-sort/imports
+import 'reflect-metadata';
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 

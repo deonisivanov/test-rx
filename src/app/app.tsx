@@ -3,6 +3,8 @@ import { createRouter, RouterProvider } from '@tanstack/react-router';
 
 import { routeTree } from './routeTree.gen';
 
+import useAuth from '@/core/hooks/useAuth/useAuth';
+
 const router = createRouter({
   routeTree,
   context: {
@@ -17,9 +19,11 @@ declare module '@tanstack/react-router' {
 }
 
 export const App = () => {
+  const { authState } = useAuth();
+
   return (
     <Theme appearance='dark'>
-      <RouterProvider router={router} context={{ isAuthenticated: false }} />
+      <RouterProvider router={router} context={{ isAuthenticated: authState.isAuthenticated }} />
     </Theme>
   );
 };

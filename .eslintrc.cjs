@@ -11,18 +11,21 @@ module.exports = {
       'error',
       {
         groups: [
+          // Пакеты из node_modules
           ['^node:'],
-          // Packages. `react` related packages come first.
+          // Сторонние пакеты
           ['^@?\\w'],
-          // Absolute imports and other imports such as Vue-style `@/foo`
-          // Anything that does not start with a dot.
+          // Абсолютные импорты
           ['^@app'],
           ['^@core'],
           ['^@features'],
           ['^@pages'],
           ['^@shared'],
-          // Anything that starts with a dot.
-          ['^\\./', '^\\.\\./']
+          // Относительные импорты
+          ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
+          ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
+          // Импорты стилей
+          ['^.+\\.s?css$']
         ]
       }
     ]

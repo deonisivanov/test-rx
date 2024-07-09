@@ -5,7 +5,7 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
   plugins: [
-    react(),
+    react({ tsDecorators: true }),
     TanStackRouterVite({
       routesDirectory: './src/app/routes',
       generatedRouteTree: './src/app/routeTree.gen.ts'
